@@ -140,6 +140,55 @@
               date, amount, and most importantly, memo.
             </p>
             <img class="image" src="img/demo.png">
+            <p class="image-caption">Using Data to Predict Categories</p>
+            <p>However, to get to this stage, we have to transform our feature into
+              suitable format for it to work.
+            </p>
+            <h3>Natural language processing</h3>
+            <hr>
+            <p>
+              <a href="https://www.ibm.com/topics/natural-language-processing">Natural language processing</a>
+              is an ability for a computer to processes
+              and interpret human language. Its application can range from language
+              translation to text summarization. In this case, we are summarizing
+              the memo into 8 different categories.
+            <ul>
+              <li>Food and Beverages</li>
+              <li>Entertainment</li>
+              <li>General Merchandise</li>
+              <li>Travel</li>
+              <li>Automotive</li>
+              <li>Healthcare/Medical</li>
+              <li>Groceries</li>
+              <li>Pets/Pet Care</li>
+            </ul>
+            To categorize, or summarize the memo. we must understand the information
+            that was given in the memo. In a typical setting, for an algorithm
+            to learn a piece of text, it looks at a subset of words in front/back
+            of a vocabulary and rank them quantitatively according to their relevance.
+            Hence the structure of the text is crucial to the algorithm. However, in
+            the memo field, there is little to no structure/context for the algorithm
+            to learn. Therefore, we attempted to use Tf-idf to extract information
+            since it does not take into account the semantic/context.
+            </p>
+            <h4>TF-IDF</h4>
+            <hr>
+            <p><a href="https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/"
+                target="_blank">TF-IDF</a>, term frequency-inverse document frequency, quantify the relevance
+              of a word in a given document among the collection of documents. It
+              counts the term frequency relative to documents. Therefore, at the end we
+              would obtained a TF-IDF features that have counts according to each transaction.
+            </p>
+            <h4>Text Cleaning</h4>
+            While TF-IDF is keeping track of the term frequency, it would be best
+            to get rid off some unnecessary words and fix some of the vocab that may
+            have the same meaning so that TF-IDF matrix is not unnecessary large.
+            For example:
+            <ul>
+              <li>Stop words: a, an ,the</li>
+              <li>Puncuation: <strong>, : . </strong></li>
+              <li>Capitalization: WALMART -> walmart</li>
+            </ul>
           </div>
         </div>
         <!--Start Text with Buttons-->
