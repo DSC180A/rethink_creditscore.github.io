@@ -272,13 +272,76 @@
                     assuming all the true labels falls into 1 class.</li>
                   <li><strong>F1 Score</strong>: measures the harmonic mean of precision and recall.</li>
                 </ul>
+                The main reason for checking F1 score is ensuring the reliability of the model on both the opposing
+                classes. Sometimes we would hope for a class mislabeled as few as possible because it could harm others
+                when we reliy on the model. For example, in a clinical trial case, it would not be ideal if we give
+                patient the wrong drug/placebo. For our case, the consequence for misclassification in our case is not
+                very high. It
+                doesn't really matter so much if we are correctly identifying all of the automotive class, for example.
+                In a case like detecting cancer, we might want to have high recall because we don't want any false
+                negatives. A false negative meaning a person had cancer and it was not detected. In our case, if a class
+                is automotive, but we instead said it was some other class, our consequence is not as bad. So the cost
+                of misclassifying any particular class is not particularly significant. Accuracy simply takes our
+                overall number of correct classifications, and divides it by the total number of classifications made.
+                It doesn't focus on any particular class, because all classes are of equal importance.
                 </p>
                 <p class="text text-center graph-title">
                   Confusion Matrix for 8 Categories on Ensemble Model
                 </p>
-                <img class="image center max-width-400 add-top-margin-small" src="">
+                <img class="image center max-width-500 add-top-margin-small" src="img/confusion.jpeg">
                 <p class="text">
-
+                  Above is the confusion matrix of all classes. Through the diagonal matrix, we see the all the
+                  probability of predicted label being correctly labeled.
+                <div class="custom-table-container center add-top-margin-small">
+                  <table class="custom-table">
+                    <thead>
+                      <tr class="bg-color-gray">
+                        <th>Category</th>
+                        <th class="text-center">Accuracy</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Automotive</td>
+                        <td class="text-center">90%</td>
+                      </tr>
+                      <tr class="bg-color-light-gray">
+                        <td>Entertainment</td>
+                        <td class="text-center">91%</td>
+                      </tr>
+                      <tr>
+                        <td>Food and Beverages</td>
+                        <td class="text-center">87%</td>
+                      </tr>
+                      <tr class="bg-color-light-gray">
+                        <td>General Merchandise</td>
+                        <td class="text-center">86%</td>
+                      </tr>
+                      <tr>
+                        <td>Groceries</td>
+                        <td class="text-center">85%</td>
+                      </tr>
+                      <tr class="bg-color-light-gray">
+                        <td>Healthcare/Medical</td>
+                        <td class="text-center">80%</td>
+                      </tr>
+                      <tr>
+                        <td>Pets/Pet care</td>
+                        <td class="text-center">97%</td>
+                      </tr>
+                      <tr class="bg-color-light-gray">
+                        <td>Travel</td>
+                        <td class="text-center">93%</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td>Average</td>
+                        <td class="text-center">88.6%</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
                 </p>
               </div>
             </div>
@@ -288,6 +351,10 @@
         <div class="flex-row">
           <div class="flex-item flex-column">
             <h2>Conclusion</h2>
+            <hr>
+            <p class="text">
+
+            </p>
           </div>
         </div>
 
