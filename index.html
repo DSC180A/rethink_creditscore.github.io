@@ -197,7 +197,7 @@
             <h3>Non-text Feature Engineering</h3>
             <hr>
             <p>To maximize information for future task, we feature engineered the
-              non-text data (<i>date, amount</i>)includes:
+              non-text data (<i>date, amount</i>) includes:
             <ul>
               <li>Standardization on <i>amount</i></li>
               <li>Whether the amount is whole number</li>
@@ -215,412 +215,131 @@
             merchandise in december for christmas. It could be a feature to indicate the behavior of how the categories
             are distributed.
             </p>
-          </div>
-        </div>
-        <!--Start Text with Images and Image buttons-->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2>Images and Image Button</h2>
+            <h3>Models</h3>
             <hr>
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation
-              e
-              li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar
-              payar
-              custosi traductores. At solmen va esser.
+            <p> Once we have prepared our data into a suitable format. We already to proceed to train our model. Since
+              we have to types of data: text-only and non-text. We decided to create an ensemble model of two sub
+              models: <strong>XGBoost</strong> and <strong>Logistic Regression</strong>. XGBoost model will be trained
+              with the non-text features while the logistic regression will be supplied with the text-only features.
             </p>
+            <h4>XGBoost</h4>
+            <p class="text">
+              <img class="image image-wrap-text max-width-400" src="img/Boosting.png">
+              <a href="https://xgboost.readthedocs.io/en/stable/tutorials/model.html" target="_blank">XGBoost</a>,
+              or extreme gradient boosting, it is a technique modified to build a strong classifer from a number of of
+              weak
+              classifier. Traditionally, the model is built from a series of smaller models. At first, the training
+              data will be train on the first model, then its mislabeled instances will then passes down to the second
+              model until all the training point is correctly classified or the maximum number of the smalled model is
+              reached. This method result the final model being a linear combination of smaller models. During the
+              process, the weights of the training data is tweaked for the next model, but in XGboost, the weights is
+              adjusted with the residual errors of the predecessors. This type of technique can be used to predict
+              regression, classification, ranks, and even user-defined predictions.
+            </p>
+            <h4>Logistic Regression</h4>
+            <p class="text">
+              <img class="image image-wrap-text max-width-400" src="img/Logit.png">
+              <a href="https://www.ibm.com/topics/logistic-regression" target="_blank">Logistic Regression</a>, is often
+              used in classification problem. It was derived from an old technique, linear regression, that estimates
+              the probability of an event happened given the dataset. Some may asked rather than probability, why don't
+              we just predict an event happened or not. The reason we would want a probability is that dataset may not
+              have enough information to perfectly predict the event happen. Also we may not have a classifier that
+              perfectly separate the class hence we have probability to account for the uncertainty of an event.
+            </p>
+            <!-------------------------------------------------------------------------------------------->
           </div>
         </div>
-        <div class="flex-row-space-between">
-          <div class="flex-item flex-column">
-            <img class="image max-width-400" src="img/dummay-img.png">
-            <p class="image-caption">Image Caption</p>
-          </div>
-          <div class="flex-item flex-column">
-            <a href="https://github.com/yenchiah/project-website-template" target="_blank" class="image max-width-400">
-              <img src="img/dummay-img.png">
-            </a>
-            <p class="image-caption">Image Button Caption</p>
-          </div>
-        </div>
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation
-              e
-              li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar
-              payar
-              custosi traductores. At solmen va esser.
-            </p>
-          </div>
-        </div>
-        <!--End Text with Images and Image buttons-->
-        <!-------------------------------------------------------------------------------------------->
-        <!--Start Text around Image-->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2>Text around Image</h2>
-            <hr>
-            <p class="text">
-              <img class="image image-wrap-text max-width-400" src="img/dummay-img.png">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-              rem
-              aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-              explicabo.
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-              dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-              sit
-              amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-              magnam
-              aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-              voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-              pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-              deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-              similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum
-              quidem
-              rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque
-              nihil
-              impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis.
-            </p>
-          </div>
-        </div>
-        <!--End Text around Image-->
-        <!-------------------------------------------------------------------------------------------->
-      </div>
-    </div>
-    <div class="banner"
-      style="background: url('img/dummy-background.jpeg') no-repeat center; background-size: cover; height: 500px;">
-      <div class="banner-table flex-column" style="background-color: rgba(0, 0, 0, 0.5);">
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="no-top-margin">This is the banner area with photo</h2>
-            <p class="text no-bottom-margin">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi
-              vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content">
-      <div class="content-table flex-column">
-        <!-------------------------------------------------------------------------------------------->
-        <!--Start Text with Centered Image and Table-->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="no-top-margin">Centered Image and Table</h2>
-            <hr>
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation
-              e
-              li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar
-              payar
-              custosi traductores. At solmen va esser.
-            </p>
-            <p class="text text-center graph-title">
-              This is the title for the bottom image
-            </p>
-            <img class="image center max-width-400 add-top-margin-small" src="img/dummay-img.png">
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation
-              e
-              li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar
-              payar
-              custosi traductores. At solmen va esser.
-            </p>
-            <p class="text text-center graph-title">
-              This is the title for the bottom table
-            </p>
-            <div class="custom-table-container center add-top-margin-small">
-              <table class="custom-table">
-                <thead>
-                  <tr class="bg-color-gray">
-                    <th>Number of</th>
-                    <th class="text-center">Unique Users</th>
-                    <th class="text-center">Smell Reports</th>
-                    <th class="text-center">Interaction Events</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Enthusiasts</td>
-                    <td class="text-center">9.4%</td>
-                    <td class="text-center">50.6%</td>
-                    <td class="text-center">44.8%</td>
-                  </tr>
-                  <tr class="bg-color-light-gray">
-                    <td>Explorers</td>
-                    <td class="text-center">36.1%</td>
-                    <td class="text-center">37.3%</td>
-                    <td class="text-center">27.3%</td>
-                  </tr>
-                  <tr>
-                    <td>Contributors</td>
-                    <td class="text-center">13.0%</td>
-                    <td class="text-center">12.1%</td>
-                    <td class="text-center">n/a</td>
-                  </tr>
-                  <tr class="bg-color-light-gray">
-                    <td>Observers</td>
-                    <td class="text-center">41.6%</td>
-                    <td class="text-center">n/a</td>
-                    <td class="text-center">27.9%</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td>Size (N)</td>
-                    <td class="text-center">2,237</td>
-                    <td class="text-center">8,112</td>
-                    <td class="text-center">79,447</td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-            <p class="text text-center graph-title">
-              This is the title for the bottom very long scrollable table
-            </p>
-            <div class="custom-table-container center add-top-margin-small">
-              <table class="custom-table">
-                <thead>
-                  <tr class="bg-color-gray">
-                    <th class="text-center">Smell Rating</th>
-                    <th class="text-center">2019</th>
-                    <th class="text-center">2018</th>
-                    <th class="text-center">2017</th>
-                    <th class="text-center">2016</th>
-                    <th class="text-center">2015</th>
-                    <th class="text-center">2014</th>
-                    <th class="text-center">2013</th>
-                    <th class="text-center">2012</th>
-                    <th class="text-center">2011</th>
-                    <th class="text-center">2010</th>
-                    <th class="text-center">2009</th>
-                    <th class="text-center">2008</th>
-                    <th class="text-center">2007</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-center">1</td>
-                    <td class="text-center">1,711 (9.5%)</td>
-                    <td class="text-center">1,199 (13.0%)</td>
-                    <td class="text-center">1,658 (20.4%)</td>
-                    <td class="text-center">1,199 (13.0%)</td>
-                    <td class="text-center">1,658 (20.4%)</td>
-                    <td class="text-center">1,199 (13.0%)</td>
-                    <td class="text-center">1,658 (20.4%)</td>
-                    <td class="text-center">1,199 (13.0%)</td>
-                    <td class="text-center">1,658 (20.4%)</td>
-                    <td class="text-center">1,199 (13.0%)</td>
-                    <td class="text-center">1,658 (20.4%)</td>
-                    <td class="text-center">1,199 (13.0%)</td>
-                    <td class="text-center">1,658 (20.4%)</td>
-                  </tr>
-                  <tr class="bg-color-light-gray">
-                    <td class="text-center">2</td>
-                    <td class="text-center">798 (4.4%)</td>
-                    <td class="text-center">497 (5.4%)</td>
-                    <td class="text-center">665 (8.2%)</td>
-                    <td class="text-center">497 (5.4%)</td>
-                    <td class="text-center">665 (8.2%)</td>
-                    <td class="text-center">497 (5.4%)</td>
-                    <td class="text-center">665 (8.2%)</td>
-                    <td class="text-center">497 (5.4%)</td>
-                    <td class="text-center">665 (8.2%)</td>
-                    <td class="text-center">497 (5.4%)</td>
-                    <td class="text-center">665 (8.2%)</td>
-                    <td class="text-center">497 (5.4%)</td>
-                    <td class="text-center">665 (8.2%)</td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">3</td>
-                    <td class="text-center">4,305 (23.9%)</td>
-                    <td class="text-center">2,649 (28.8%)</td>
-                    <td class="text-center">2,246 (27.7%)</td>
-                    <td class="text-center">2,649 (28.8%)</td>
-                    <td class="text-center">2,246 (27.7%)</td>
-                    <td class="text-center">2,649 (28.8%)</td>
-                    <td class="text-center">2,246 (27.7%)</td>
-                    <td class="text-center">2,649 (28.8%)</td>
-                    <td class="text-center">2,246 (27.7%)</td>
-                    <td class="text-center">2,649 (28.8%)</td>
-                    <td class="text-center">2,246 (27.7%)</td>
-                    <td class="text-center">2,649 (28.8%)</td>
-                    <td class="text-center">2,246 (27.7%)</td>
-                  </tr>
-                  <tr class="bg-color-light-gray">
-                    <td class="text-center">4</td>
-                    <td class="text-center">5,804 (32.3%)</td>
-                    <td class="text-center">2,932 (31.9%)</td>
-                    <td class="text-center">2,171 (26.8%)</td>
-                    <td class="text-center">2,932 (31.9%)</td>
-                    <td class="text-center">2,171 (26.8%)</td>
-                    <td class="text-center">2,932 (31.9%)</td>
-                    <td class="text-center">2,171 (26.8%)</td>
-                    <td class="text-center">2,932 (31.9%)</td>
-                    <td class="text-center">2,171 (26.8%)</td>
-                    <td class="text-center">2,932 (31.9%)</td>
-                    <td class="text-center">2,171 (26.8%)</td>
-                    <td class="text-center">2,932 (31.9%)</td>
-                    <td class="text-center">2,171 (26.8%)</td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">5</td>
-                    <td class="text-center">5,356 (29.8%)</td>
-                    <td class="text-center">1,918 (20.9%)</td>
-                    <td class="text-center">1,372 (16.9%)</td>
-                    <td class="text-center">1,918 (20.9%)</td>
-                    <td class="text-center">1,372 (16.9%)</td>
-                    <td class="text-center">1,918 (20.9%)</td>
-                    <td class="text-center">1,372 (16.9%)</td>
-                    <td class="text-center">1,918 (20.9%)</td>
-                    <td class="text-center">1,372 (16.9%)</td>
-                    <td class="text-center">1,918 (20.9%)</td>
-                    <td class="text-center">1,372 (16.9%)</td>
-                    <td class="text-center">1,918 (20.9%)</td>
-                    <td class="text-center">1,372 (16.9%)</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td class="text-center">Sum</td>
-                    <td class="text-center">17,974</td>
-                    <td class="text-center">9,195</td>
-                    <td class="text-center">8,112</td>
-                    <td class="text-center">9,195</td>
-                    <td class="text-center">8,112</td>
-                    <td class="text-center">9,195</td>
-                    <td class="text-center">8,112</td>
-                    <td class="text-center">9,195</td>
-                    <td class="text-center">8,112</td>
-                    <td class="text-center">9,195</td>
-                    <td class="text-center">8,112</td>
-                    <td class="text-center">9,195</td>
-                    <td class="text-center">8,112</td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation
-              e
-              li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar
-              payar
-              custosi traductores. At solmen va esser.
-            </p>
-          </div>
-        </div>
-        <!--End Text with Centered Image and Table-->
-        <!-------------------------------------------------------------------------------------------->
-        <!--Start Text with Adaptive Image-->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2>Adaptive Image</h2>
-            <hr>
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation
-              e
-              li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar
-              payar
-              custosi traductores. At solmen va esser.
-            </p>
-            <a class="image adaptive-image" style="background-image: url('img/dummay-img-long.png'); min-height: 150px;"
-              href="img/dummay-img-long.png" target="_blank"></a>
-            <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation
-              e
-              li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar
-              payar
-              custosi traductores. At solmen va esser.
-            </p>
-          </div>
-        </div>
-        <!--End Text with Adaptive Image-->
-        <!-------------------------------------------------------------------------------------------->
-      </div>
-    </div>
-    <div class="banner"
-      style="background: url('img/dummy-background.jpeg') no-repeat center; background-size: cover; height: 500px;">
-    </div>
-    <div class="banner">
-      <div class="banner-table flex-column">
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2 class="add-top-margin-small">This is the two banner area with photo</h2>
-            <p class="text">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi
-              vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content">
-      <div class="content-table flex-column">
-        <!-------------------------------------------------------------------------------------------->
+        <div class=" content">
+          <div class="content-table flex-column">
+            <!-------------------------------------------------------------------------------------------->
+            <!--Start Text with Confusion Matrix-->
+            <div class="flex-row">
+              <div class="flex-item flex-column">
+                <h2 class="no-top-margin">Results</h2>
+                <hr>
+                <h3>Scoring Metric: Accuracy</h3>
+                <hr>
+                <p class="text">
+                  There are many evaluation metrics for classification problem, and here we chose acuuracy because of
+                  the nature of the problem. We will introduce some definition of each metrics and explain why we
+                  chose accuracy.
+                <ul>
+                  <li><strong>Accuracy</strong> : measures the number of correctly classified labels over all labels.
+                  </li>
+                  <li><strong>Precision</strong>: measures the number of correctly classified lables over all labels,
+                    assuming all the prediction falls into 1 class.</li>
+                  <li><strong>Recall</strong>: measures the number of correctly classified lables over all labels,
+                    assuming all the true labels falls into 1 class.</li>
+                  <li><strong>F1 Score</strong>: measures the harmonic mean of precision and recall.</li>
+                </ul>
+                </p>
+                <p class="text text-center graph-title">
+                  Confusion Matrix for 8 Categories on Ensemble Model
+                </p>
+                <img class="image center max-width-400 add-top-margin-small" src="">
+                <p class="text">
 
-        <!--Authors-->
-        <div class="flex-item flex-column">
-          <p class="text text-large">
-            <a target="_blank" href="javascript:void(0)">Chung En Pan</a>, cepan@ucsd.edu<br>
-            <a target="_blank" href="javascript:void(0)">Kyle Nero</a>, knero@ucsd.edu<br>
-            <a target="_blank" href="javascript:void(0)">Koosha Jadbabaei</a>, kjadbaba@ucsd.edu<br>
-            <a target="_blank" href="javascript:void(0)">Nathan Van Lingen</a>, nvanling@ucsd.edu<br>
-          </p>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-------------------------------------------------------------------------------------------->
         </div>
-        <!--Reference-->
-        <div class="flex-item flex-column">
-          <p class="text text-small">
-            <a target="_blank"
-              href="https://themortgagereports.com/22079/bank-statements-3-things-mortgage-lenders-dont-want-to-see">Bank
-              statements: 3 things mortgage lenders don't want to see</a>
-          </p>
-        </div>
-        <!-------------------------------------------------------------------------------------------->
-        <!--Start Credits-->
-        <div class="flex-row">
-          <div class="flex-item flex-item-stretch flex-column">
-            <p class="text text-small text-italic add-top-margin-large">
-              Credits: <span class="highlight-text">Organization One</span>: Author One and Author Two / <span
-                class="highlight-text">Organization Two</span>: Author Three and Author Four
-            </p>
+        <div class="content">
+          <div class="content-table flex-column">
+            <!-------------------------------------------------------------------------------------------->
+
+            <!--Authors-->
+            <div class="flex-item flex-column">
+              <p class="text text-large">
+                <a target="_blank" href="javascript:void(0)">Chung En Pan</a>, cepan@ucsd.edu<br>
+                <a target="_blank" href="javascript:void(0)">Kyle Nero</a>, knero@ucsd.edu<br>
+                <a target="_blank" href="javascript:void(0)">Koosha Jadbabaei</a>, kjadbaba@ucsd.edu<br>
+                <a target="_blank" href="javascript:void(0)">Nathan Van Lingen</a>, nvanling@ucsd.edu<br>
+              </p>
+            </div>
+            <!--Reference-->
+            <div class="flex-item flex-column">
+              <p class="text text-small">
+                <a target="_blank"
+                  href="https://themortgagereports.com/22079/bank-statements-3-things-mortgage-lenders-dont-want-to-see">Bank
+                  statements: 3 things mortgage lenders don't want to see</a>
+              </p>
+            </div>
+            <!-------------------------------------------------------------------------------------------->
+            <!--Start Credits-->
+            <div class="flex-row">
+              <div class="flex-item flex-item-stretch flex-column">
+                <p class="text text-small text-italic add-top-margin-large">
+                  Credits: <span class="highlight-text">Organization One</span>: Author One and Author Two / <span
+                    class="highlight-text">Organization Two</span>: Author Three and Author Four
+                </p>
+              </div>
+            </div>
+            <!--End Credits-->
+            <!-------------------------------------------------------------------------------------------->
           </div>
         </div>
-        <!--End Credits-->
-        <!-------------------------------------------------------------------------------------------->
-      </div>
-    </div>
-    <div class="banner">
-      <div class="banner-table flex-column">
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h2>This is the footer area</h2>
-            <p class="text add-bottom-margin-large">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi
-              vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
-              blandit
-              vel, luctus pulvinar, hendrerit id, lorem.
-            </p>
+        <div class="banner">
+          <div class="banner-table flex-column">
+            <div class="flex-row">
+              <div class="flex-item flex-column">
+                <h2>This is the footer area</h2>
+                <p class="text add-bottom-margin-large">
+                  Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies
+                  nisi
+                  vel
+                  augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus
+                  eget
+                  condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
+                  blandit
+                  vel, luctus pulvinar, hendrerit id, lorem.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 </body>
 
 </html>
