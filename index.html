@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Rethink Credit score</title>
+  <title>Rethinking Credit Score</title>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
@@ -31,7 +31,7 @@
       <div class="banner-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2 class="add-top-margin-small">Rethink Credit Score: Ensuring Fair Lending through NLP for Transaction
+            <h2 class="add-top-margin-small">Rethinking Credit Score: Ensuring Fair Lending through NLP for Transaction
               Categorization</h2>
             <p class="text">
               For decades, the banking industry has assessed credit worthiness the same way: they
@@ -67,17 +67,15 @@
               During a loan/credit approval. There are several processes applicants
               needs to go through:
             <ul>
-              <li><b>Application</b>: Applicants fill out an application form and for
-                loan/credit cards. </li>
-              <li><b>Submission</b>: Applicants submit the form along with required
-                documents to the bank for review. Required documents may include
-                Personal financial statement, itentify verification, etc.</li>
-              <li><b>Review</b>: Banks evaluate applicants' eligibility (credit scores)
-                using credit scoring models with the information provided.</li>
-              <li><b>Approval</b>: High credit score gained conditionally approved,
-                banks checks documents for final approval. During Loan processes,
-                banks communicate the terms and conditions with the applicants.
-                If applicants accepts the terms, the loan is then approved.</li>
+              <li><b>Application</b>: Applicants fill out a loan application form for a credit card or other personal
+                loan.
+              </li>
+              <li><b>Submission</b>: Applicants submit the form along with required documents* to the lenders for
+                review.</li>
+              <li><b>Review</b>: Lenders evaluate applicants’ credit worthiness (credit scores) using credit scoring
+                models.</li>
+              <li><b>Approval</b>: High credit scores gained pre-approval, but banks checks documents for final
+                approval.</li>
             </ul>
             </p>
           </div>
@@ -90,13 +88,13 @@
             <h2>Draw Backs</h2>
             <hr>
             <p class="text">
-              When an applicant apply for a loan or a credit card, Lenders such as banks look at your bank statements
-              to determine the eligibility of the approval This may include:
+              When an applicant applies for a loan or a credit card, lenders such as banks look at the applicant's bank
+              statements
+              to determine their eligibility. This may includes checking for:
             <ul>
-              <li>Enough cash for the down payments</li>
-              <li>Monthly payment currently holding</li>
-              <li>Enough Cash flow for the monthly payments</li>
-              <li>Emergency funds</li>
+              <li>Savings and cash flow</li>
+              <li>Unusual deposits</li>
+              <li>Debt</li>
             </ul>
             As well as red flags such as:
             <ul>
@@ -109,10 +107,9 @@
 
             Even though this verification is sufficient enough to understand the general public, it fails to
             consider applicants who are underrepresented. For example, immigrants and young adults
-            typically do not have a stable funds in the states but are sourced from parents in foreign
-            country. The activities of the large deposits hinder their available credit or even the
-            eligibility of acquiring a loan, when in fact, they have sufficient and stable funds to
-            suffiecient.
+            typically do not have a stable funds in the USA but often bring money in from their home country. The
+            activities of these large overseas deposits often hinders their available credit or their ability for credit
+            approval, when in reality they should be eligible.
             </p>
 
             <p>
@@ -133,25 +130,26 @@
             <h2>Methods</h2>
             <hr>
             <p class="text">
-              Recalled the factors lenders hope to (or not) see in the banking statement,
-              we see that these factors may not generalize to all demographic.
+              Recall the factors lenders hope to (or not to) see in a banking statement,
+              we see that these factors may not generalize to people of all demographics.
               Therefore we attempted to extract more information from banking
               statement by: determining the category of each transaction using its
-              date, amount, and most importantly, memo.
+              date, amount, and most importantly, statement memo.
             </p>
             <img class="image" src="img/demo.png">
             <p class="image-caption">Using Data to Predict Categories</p>
-            <p>However, to get to this stage, we have to transform our feature into
-              suitable format for it to work.
+            <p>To get to this stage, we first worked to transform or engineer our features into
+              suitable format to be able to build our models.
             </p>
             <h3>Natural language processing</h3>
             <hr>
             <p>
               <a href="https://www.ibm.com/topics/natural-language-processing">Natural language processing</a>
-              is an ability for a computer to processes
+              is an ability for a computer to process
               and interpret human language. Its application can range from language
-              translation to text summarization. In this case, we are summarizing
-              the memo into 8 different categories.
+              translation to text summarization. In this case, we are using NLP to transform our memo column in order to
+              build a model summarizing a user's transactions (on bank statement)
+              into 8 different categories.
             <ul>
               <li>Food and Beverages</li>
               <li>Entertainment</li>
@@ -162,14 +160,12 @@
               <li>Groceries</li>
               <li>Pets/Pet Care</li>
             </ul>
-            To categorize, or summarize the memo. we must understand the information
-            that was given in the memo. In a typical setting, for an algorithm
-            to learn a piece of text, it looks at a subset of words in front/back
-            of a vocabulary and rank them quantitatively according to their relevance.
-            Hence the structure of the text is crucial to the algorithm. However, in
-            the memo field, there is little to no structure/context for the algorithm
-            to learn. Therefore, we attempted to use Tf-idf to extract information
-            since it does not take into account the semantic/context.
+            To categorize, or summarize the memo, we must find a way to transform the text into something our model
+            could understand. There are many different NLP methods that range in complexity and computing power to do
+            such tasks. In our use case, the memo field has very little structure/context for the algorithm
+            to learn. Therefore, we attempted to use TF-IDF to transform the text into feature vectors
+            since it focuses on characters and unigrams, bigrams, and trigrams rather than the full context of a
+            sentence.
             </p>
             <h4>TF-IDF</h4>
             <hr>
@@ -212,7 +208,7 @@
             </ul>
             The reason we created this features is because category sizes may vary on certain days of the week/month
             /year. People might spend more on dining during the weekends, spend more on general
-            merchandise in december for christmas. It could be a feature to indicate the behavior of how the categories
+            merchandise in december for Christmas. It could be a feature to indicate the behavior of how the categories
             are distributed.
             </p>
             <h3>Models</h3>
@@ -226,13 +222,13 @@
             <p class="text">
               <img class="image image-wrap-text max-width-400" src="img/Boosting.png">
               <a href="https://xgboost.readthedocs.io/en/stable/tutorials/model.html" target="_blank">XGBoost</a>,
-              or extreme gradient boosting, it is a technique modified to build a strong classifer from a number of of
+              or extreme gradient boosting, it is a technique modified to build a strong classifer from a number of
               weak
-              classifier. Traditionally, the model is built from a series of smaller models. At first, the training
-              data will be train on the first model, then its mislabeled instances will then passes down to the second
+              classifiers. Traditionally, the model is built from a series of smaller models. At first, the training
+              data will be train on the first model, then the mislabeled instances will pass down to the second
               model until all the training point is correctly classified or the maximum number of the smalled model is
-              reached. This method result the final model being a linear combination of smaller models. During the
-              process, the weights of the training data is tweaked for the next model, but in XGboost, the weights is
+              reached. As a result, the final model becomes a linear combination of smaller models. During the
+              process, the weights of the training data are tweaked for the next model. In XGboost, the weights are
               adjusted with the residual errors of the predecessors. This type of technique can be used to predict
               regression, classification, ranks, and even user-defined predictions.
             </p>
@@ -240,11 +236,11 @@
             <p class="text">
               <img class="image image-wrap-text max-width-400" src="img/Logit.png">
               <a href="https://www.ibm.com/topics/logistic-regression" target="_blank">Logistic Regression</a>, is often
-              used in classification problem. It was derived from an old technique, linear regression, that estimates
-              the probability of an event happened given the dataset. Some may asked rather than probability, why don't
-              we just predict an event happened or not. The reason we would want a probability is that dataset may not
-              have enough information to perfectly predict the event happen. Also we may not have a classifier that
-              perfectly separate the class hence we have probability to account for the uncertainty of an event.
+              used in classification problems. It was derived from an old technique, linear regression, that estimates
+              the probability of an event happened given the dataset. It is often important to utilize the model's
+              probability output rather than it's direct classification output, especially in our case where we are
+              looking to
+              combine different models.
             </p>
             <!-------------------------------------------------------------------------------------------->
           </div>
@@ -260,9 +256,10 @@
                 <h3>Scoring Metric: Accuracy</h3>
                 <hr>
                 <p class="text">
-                  There are many evaluation metrics for classification problem, and here we chose acuuracy because of
-                  the nature of the problem. We will introduce some definition of each metrics and explain why we
-                  chose accuracy.
+                  There are many evaluation metrics we could use for this classification problem. We chose accuracy
+                  because of
+                  the nature of the problem. We introduce definitions of each metric we considered and our reasoning for
+                  prioritizing accuracy:
                 <ul>
                   <li><strong>Accuracy</strong> : measures the number of correctly classified labels over all labels.
                   </li>
@@ -273,15 +270,15 @@
                   <li><strong>F1 Score</strong>: measures the harmonic mean of precision and recall.</li>
                 </ul>
                 The main reason for checking F1 score is ensuring the reliability of the model on both the opposing
-                classes. Sometimes we would hope for a class mislabeled as few as possible because it could harm others
-                when we reliy on the model. For example, in a clinical trial case, it would not be ideal if we give
-                patient the wrong drug/placebo. For our case, the consequence for misclassification in our case is not
-                very high. It
-                doesn't really matter so much if we are correctly identifying all of the automotive class, for example.
-                In a case like detecting cancer, we might want to have high recall because we don't want any false
-                negatives. A false negative meaning a person had cancer and it was not detected. In our case, if a class
-                is automotive, but we instead said it was some other class, our consequence is not as bad. So the cost
-                of misclassifying any particular class is not particularly significant. Accuracy simply takes our
+                classes. Often in looking solely at accuracy, the mislabeled minority observations are overlooked which
+                is a problem in some use cases. For our case, the consequence for misclassification in the minority
+                class is not
+                very high. For example, it
+                doesn't really matter if we incorrectly identifying some of the automotive class.
+                In a case like detecting cancer, though, we might want to utilize recall because we don't want any false
+                negatives. A false negative meaning a person had cancer and it was not detected. In our case, the cost
+                of misclassifying any particular class is not particularly significant as explained in the automotive
+                example. Accuracy simply takes the
                 overall number of correct classifications, and divides it by the total number of classifications made.
                 It doesn't focus on any particular class, because all classes are of equal importance.
                 </p>
@@ -353,17 +350,22 @@
             <h2>Conclusion</h2>
             <hr>
             <p class="text">
-              Despite credit score being a successful metric during loan application approval process, traditional
-              approval process fails to consider the fact that underrepresented group may not have good or any credit
-              score for financial institution to evaluate which lead to ineligibility of loan and loss of potential
-              customers. We aims to explore the limitations of traditional credit score models and propose an
-              alternative method for determining creditworthiness that is more inclusive and equitable.We approach this
-              problem by supplementing extra feautures to the credit scoring model to aid the credit evaluation. we
-              utilized supplemental document (banking statement history) when applicants apply for a loan. We extracted
-              information from the memo section in each transaction, along with its date and amount, to categorize the
-              transaction. With our model, we have successfully predicted 88% of our transactions. This is beneficial in
-              supplementing an impactful features for the scoring model in the future. This method of adding relevant
-              feature will aid both applicants with low/no credits as well as institutions who are acquiring more
+              Despite credit score being a significant metric for lenders during the loan application approval process,
+              this single metric fails to consider how underrepresented demographics may be deemed as unworthy of credit
+              when in fact they should be worthy. This is a lose-lose for both lenders and applicants. On one hand,
+              lenders lose
+              potential customers ("the credit invisible") who are excluded due to this traditional process. At the same
+              time, these applicants are not allowed to receive credit, which makes things like buying a house seemingly
+              impossible. We aim to explore the limitations of traditional credit score models and propose an
+              alternative method for determining creditworthiness that is more inclusive and equitable. We approach this
+              problem by utilizing supplmental feautures like a user's categorized transaction history to the
+              traditional credit scoring model. With a user's bank statements, we could extract
+              information like the transaction date, amount, and memo to flag each transaction into a category (with 89%
+              accuracy). The next
+              step would be to utilize these categories in creating new features to optimize common credit scoring
+              models to make them stronger and more fair. This approach solves both of the problems we described above
+              as it
+              will aid applicants with low/no credits as well as profit-hungry institutions looking to acquire more
               customers in financial industry.
             </p>
           </div>
@@ -377,10 +379,12 @@
             <!--Authors-->
             <div class="flex-item flex-column">
               <p class="text text-large">
-                <a target="_blank" href="javascript:void(0)">Chung En Pan</a>, cepan@ucsd.edu<br>
+                <a target="_blank" href="https://www.linkedin.com/in/chungenpan/">Chung En Pan</a>, cepan@ucsd.edu<br>
                 <a target="_blank" href="javascript:void(0)">Kyle Nero</a>, knero@ucsd.edu<br>
-                <a target="_blank" href="javascript:void(0)">Koosha Jadbabaei</a>, kjadbaba@ucsd.edu<br>
-                <a target="_blank" href="javascript:void(0)">Nathan Van Lingen</a>, nvanling@ucsd.edu<br>
+                <a target="_blank" href="https://www.linkedin.com/in/koosha-jadbabaei/">Koosha Jadbabaei</a>,
+                kjadbaba@ucsd.edu<br>
+                <a target="_blank" href="https://www.linkedin.com/in/nathan-van-lingen-a78a2a160/">Nathan Van
+                  Lingen</a>, nvanling@ucsd.edu<br>
               </p>
             </div>
             <!--Reference-->
