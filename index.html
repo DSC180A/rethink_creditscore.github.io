@@ -34,7 +34,7 @@
             <h2 class="add-top-margin-small">Rethinking Credit Score: Ensuring Fair Lending through NLP for Transaction
               Categorization</h2>
             <p class="text">
-              For decades, the banking industry has assessed credit worthiness the same way: they
+              For decades, the banking industry has assessed creditworthiness the same way: they
               use massive amounts of data such as an applicant's current debt, the accounts
               they have opened, and the ratio of money owed to available credit to
               determine loan qualification. This system has been generally successful
@@ -44,7 +44,7 @@
               invisible”, to be approved for loans or other forms of credit.
               Hence, in this paper, we introduced a more comprehensive assessment
               framework that allows individuals to submit their past banking
-              history as a supplementary material to better assess credit worthiness.
+              history as a supplementary material to better assess creditworthiness.
             </p>
           </div>
         </div>
@@ -72,7 +72,7 @@
               </li>
               <li><b>Submission</b>: Applicants submit the form along with required documents* to the lenders for
                 review.</li>
-              <li><b>Review</b>: Lenders evaluate applicants’ credit worthiness (credit scores) using credit scoring
+              <li><b>Review</b>: Lenders evaluate applicants' creditworthiness (credit scores) using credit scoring
                 models.</li>
               <li><b>Approval</b>: High credit scores gained pre-approval, but banks checks documents for final
                 approval.</li>
@@ -187,7 +187,7 @@
             For example:
             <ul>
               <li>Stop words: a, an ,the</li>
-              <li>Puncuation: <strong>, : . </strong></li>
+              <li>Punctuation: <strong>, : . </strong></li>
               <li>Capitalization: WALMART -> walmart</li>
             </ul>
             <h3>Non-text Feature Engineering</h3>
@@ -214,7 +214,7 @@
             <h3>Models</h3>
             <hr>
             <p> Once we have prepared our data into a suitable format. We already to proceed to train our model. Since
-              we have to types of data: text-only and non-text. We decided to create an ensemble model of two sub
+              we have two types of data: text-only and non-text. We decided to create an ensemble model of two sub
               models: <strong>XGBoost</strong> and <strong>Logistic Regression</strong>. XGBoost model will be trained
               with the non-text features while the logistic regression will be supplied with the text-only features.
             </p>
@@ -222,11 +222,11 @@
             <p class="text">
               <img class="image image-wrap-text max-width-400" src="img/Boosting.png">
               <a href="https://xgboost.readthedocs.io/en/stable/tutorials/model.html" target="_blank">XGBoost</a>,
-              or extreme gradient boosting, it is a technique modified to build a strong classifer from a number of
+              or extreme gradient boosting, it is a technique modified to build a strong classifier from a number of
               weak
               classifiers. Traditionally, the model is built from a series of smaller models. At first, the training
               data will be train on the first model, then the mislabeled instances will pass down to the second
-              model until all the training point is correctly classified or the maximum number of the smalled model is
+              model until all the training point is correctly classified or the maximum number of the smaller model is
               reached. As a result, the final model becomes a linear combination of smaller models. During the
               process, the weights of the training data are tweaked for the next model. In XGboost, the weights are
               adjusted with the residual errors of the predecessors. This type of technique can be used to predict
@@ -238,7 +238,7 @@
               <a href="https://www.ibm.com/topics/logistic-regression" target="_blank">Logistic Regression</a>, is often
               used in classification problems. It was derived from an old technique, linear regression, that estimates
               the probability of an event happened given the dataset. It is often important to utilize the model's
-              probability output rather than it's direct classification output, especially in our case where we are
+              probability output rather than its direct classification output, especially in our case where we are
               looking to
               combine different models.
             </p>
@@ -263,9 +263,9 @@
                 <ul>
                   <li><strong>Accuracy</strong> : measures the number of correctly classified labels over all labels.
                   </li>
-                  <li><strong>Precision</strong>: measures the number of correctly classified lables over all labels,
+                  <li><strong>Precision</strong>: measures the number of correctly classified labels over all labels,
                     assuming all the prediction falls into 1 class.</li>
-                  <li><strong>Recall</strong>: measures the number of correctly classified lables over all labels,
+                  <li><strong>Recall</strong>: measures the number of correctly classified labels over all labels,
                     assuming all the true labels falls into 1 class.</li>
                   <li><strong>F1 Score</strong>: measures the harmonic mean of precision and recall.</li>
                 </ul>
@@ -358,7 +358,7 @@
               time, these applicants are not allowed to receive credit, which makes things like buying a house seemingly
               impossible. We aim to explore the limitations of traditional credit score models and propose an
               alternative method for determining creditworthiness that is more inclusive and equitable. We approach this
-              problem by utilizing supplmental feautures like a user's categorized transaction history to the
+              problem by utilizing supplemental features like a user's categorized transaction history to the
               traditional credit scoring model. With a user's bank statements, we could extract
               information like the transaction date, amount, and memo to flag each transaction into a category (with 89%
               accuracy). The next
@@ -380,7 +380,7 @@
             <div class="flex-item flex-column">
               <p class="text text-large">
                 <a target="_blank" href="https://www.linkedin.com/in/chungenpan/">Chung En Pan</a>, cepan@ucsd.edu<br>
-                <a target="_blank" href="javascript:void(0)">Kyle Nero</a>, knero@ucsd.edu<br>
+                <a target="_blank" href="https://www.linkedin.com/in/kylenero/">Kyle Nero</a>, knero@ucsd.edu<br>
                 <a target="_blank" href="https://www.linkedin.com/in/koosha-jadbabaei/">Koosha Jadbabaei</a>,
                 kjadbaba@ucsd.edu<br>
                 <a target="_blank" href="https://www.linkedin.com/in/nathan-van-lingen-a78a2a160/">Nathan Van
